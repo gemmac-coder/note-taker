@@ -1,23 +1,3 @@
-const express = require("express");
-const fs = require("fs");
-const cors = require("cors");
-const database = require("./db/db.json");
-const js = require("index.js");
-const htmlRoutes = require("./routes/htmlRoutes.js");
-const { urlencoded } = require("express");
-
-app.listen(PORT, () => {
-  console.log(`Note taker app listening at http://localhost:${PORT}`);
-});
-
-app.use(express.json());
-app.use(cors());
-app.use(express.static("public"));
-app.use(urlencoded({ extended: true }));
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
-
-const notes = database.notes;
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -52,7 +32,6 @@ const getNotes = () =>
       "Content-Type": "application/json",
     },
   });
-res.json(notes);
 
 const saveNote = (note) =>
   fetch("/api/notes", {
@@ -62,7 +41,6 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
-res.json(notes);
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -71,7 +49,6 @@ const deleteNote = (id) =>
       "Content-Type": "application/json",
     },
   });
-res.json(notes);
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
