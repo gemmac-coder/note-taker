@@ -1,4 +1,5 @@
 const express = require("express");
+const { v4: uuidv4 } = require("uuid");
 const fs = require("fs");
 const cors = require("cors");
 const {
@@ -6,6 +7,7 @@ const {
   getIndexHTML,
 } = require("./controllers/htmlController");
 const getNotesFromDatabase = require("./controllers/apiController");
+
 const util = require("util");
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
@@ -39,19 +41,18 @@ app.post("/api/notes", async (req, res) => {
   console.log("hello from api notes");
   try {
     const notes = await readFileAsync("./db/db.json", "utf-8");
-    console.log(notes);
     const newNote = req.body;
-    const newNoteID = notes.length + 1;
+
     const newNoteData = {
-      id: newNoteID,
+      id: uuidv4(),
       title: newNote.title,
       text: newNote.text,
     };
-
-    notes.push(newNoteData);
+    const parseNotes = JSON.parse(notes);
+    parseNotes.push(newNoteData);
     res.json(newNoteData);
 
-    await writeFileAsync("./db/db.json", JSON.stringify(notes));
+    await writeFileAsync("./db/db.json", JSON.stringify(parseNotes));
 
     // res.json(JSON.parse(notes));
   } catch (error) {
