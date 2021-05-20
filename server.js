@@ -36,8 +36,10 @@ app.get("/api/notes", async (req, res) => {
 });
 
 app.post("/api/notes", async (req, res) => {
+  console.log("hello from api notes");
   try {
     const notes = await readFileAsync("./db/db.json", "utf-8");
+    console.log(notes);
     const newNote = req.body;
     const newNoteID = notes.length + 1;
     const newNoteData = {
