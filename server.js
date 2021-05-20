@@ -42,9 +42,9 @@ app.post("/api/notes", async (req, res) => {
   try {
     const notes = await readFileAsync("./db/db.json", "utf-8");
     const newNote = req.body;
-
+    const newNoteID = uuidv4();
     const newNoteData = {
-      id: uuidv4(),
+      id: newNoteID,
       title: newNote.title,
       text: newNote.text,
     };
