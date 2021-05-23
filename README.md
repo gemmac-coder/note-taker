@@ -15,3 +15,7 @@ A dynamic note taker application utilising the node.js express server to make ge
 # Screenshot of application
 
 ![Screenshot showcasing application at /notes route ](public/assets/screenshots/note-taker-app.png)
+
+## Link to deploy app on Heroku:
+
+https://note-taker-app-gc.herokuapp.com
