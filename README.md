@@ -23,7 +23,9 @@ A dynamic note taker application utilising the node.js express server to make ge
 
 MIT
 
-# Screenshot of application
+# Screenshots of application
+
+![Screenshot showcasing application homepage](public/assets/screenshots/note-taker-homepage.png)
 
 ![Screenshot showcasing application at /notes route ](public/assets/screenshots/note-taker-app.png)
 
