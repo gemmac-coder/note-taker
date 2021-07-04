@@ -74,7 +74,7 @@ app.post("/api/notes", async (req, res) => {
   }
 });
 
-// The app is listening to the specified port
+// The app is listening to the specific port
 app.listen(PORT, () => {
   console.log(`Note taker app listening at http://localhost:${PORT}`);
 });
