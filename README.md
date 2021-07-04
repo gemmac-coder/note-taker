@@ -12,6 +12,13 @@ A dynamic note taker application utilising the node.js express server to make ge
 - Used util to promisify the fs read file and write file
 - Used the uuid package to create a unique id for each saved note
 
+## Technologies used:
+
+- JavaScript
+- Node.js
+- Express
+- UUID
+
 # Screenshot of application
 
 ![Screenshot showcasing application at /notes route ](public/assets/screenshots/note-taker-app.png)
