@@ -30,3 +30,7 @@ MIT
 ## Link to deploy app on Heroku:
 
 https://note-taker-app-gc.herokuapp.com
+
+## Contact Information:
+
+For further information on this application, please email me at gemmacollinge_71@hotmail.com
