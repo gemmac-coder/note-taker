@@ -30,8 +30,8 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 
-// The "/" home page route requires the getIndexHTML function
-app.get("/", getIndexHTML);
+// The "/*" home page route requires the getIndexHTML function
+app.get("/*", getIndexHTML);
 
 // The "/notes"route requires the getNotesFromHTML function
 app.get("/notes", getNotesFromHTML);
