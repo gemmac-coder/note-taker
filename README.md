@@ -29,6 +29,8 @@ MIT
 
 ![Screenshot showcasing application at /notes route ](public/assets/screenshots/note-taker-app.png)
 
+![Screenshot showcasing specific note](public/assets/screenshots/note-taker-note-view.png)
+
 ## Link to deploy app on Heroku:
 
 https://note-taker-app-gc.herokuapp.com
